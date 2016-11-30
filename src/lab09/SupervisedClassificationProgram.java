@@ -54,14 +54,14 @@ public class SupervisedClassificationProgram
     		File aFile = new File(file);
     		List<Double> percentCorrect = getPercentCorrectForOneFile(aFile, numPermutations, random);
 		
-    	for(Iterator<Double> itr = percentCorrect.iterator();itr.hasNext();)
-    	{
-		    if(itr.hasNext())
-		    {
-		        System.out.println(itr.next());
-		    }
-		}
-		return new Double (percentCorrect.size());
+    		for(Iterator<Double> itr = percentCorrect.iterator();itr.hasNext();)
+    		{
+    			if(itr.hasNext())
+    			{
+    				System.out.println(itr.next());
+    			}
+    		}
+    		return new Double (percentCorrect.size());
 	}
     
     private void start()
