@@ -14,7 +14,7 @@ public class SupervisedClassificationProgram
 {
 	
     private String file = "D:\\Programming\\Cygwin64\\home\\Lei Zhao\\"
-    									+ "pivoted_genusLogNormalWithMetadata.arff";
+    								+ "pivoted_genusLogNormalWithMetadata.arff";
     private static final int NUM_0F_ITERATIONS = 25;
     private static final int NUM_OF_THREADS = 4;
     private static final int SINGLE_T_TIMES = 100;
@@ -51,17 +51,17 @@ public class SupervisedClassificationProgram
     
     private Double run(int numPermutations) throws Exception
 	{	
-    		File aFile = new File(file);
-    		List<Double> percentCorrect = getPercentCorrectForOneFile(aFile, numPermutations, random);
+    	File aFile = new File(file);
+    	List<Double> percentCorrect = getPercentCorrectForOneFile(aFile, numPermutations, random);
 		
-    		for(Iterator<Double> itr = percentCorrect.iterator();itr.hasNext();)
+    	for(Iterator<Double> itr = percentCorrect.iterator();itr.hasNext();)
+    	{
+    		if(itr.hasNext())
     		{
-    			if(itr.hasNext())
-    			{
-    				System.out.println(itr.next());
-    			}
+    			System.out.println(itr.next());
     		}
-    		return new Double (percentCorrect.size());
+    	}
+    	return new Double (percentCorrect.size());
 	}
     
     private void start()
@@ -71,11 +71,11 @@ public class SupervisedClassificationProgram
     		@Override
     		public void run()
     		{
-        	    try
+    			try
 				{
-        	    	total.add(SupervisedClassificationProgram.this.run(NUM_0F_ITERATIONS));
-				} 	catch (Exception e)
-				
+    				total.add(SupervisedClassificationProgram.this.run(NUM_0F_ITERATIONS));
+				} 	
+    			catch (Exception e)
         	    {
 					e.printStackTrace();
 				}
@@ -85,8 +85,7 @@ public class SupervisedClassificationProgram
     	new Thread(r).start();
     }
     
-    public static List<Double> getPercentCorrectForOneFile( File inFile, int numPermutations, Random random ) 
-			throws Exception
+    public static List<Double> getPercentCorrectForOneFile( File inFile, int numPermutations, Random random ) throws Exception
     {
     	List<Double> percentCorrect = new ArrayList<Double>();
 	
