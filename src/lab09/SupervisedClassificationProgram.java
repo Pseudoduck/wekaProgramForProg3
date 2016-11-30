@@ -14,9 +14,7 @@ public class SupervisedClassificationProgram
 {
 	
     private String file = "D:\\Programming\\Cygwin64\\home\\Lei Zhao\\"
-    									+ 
-
-"pivoted_genusLogNormalWithMetadata.arff";
+    									+ "pivoted_genusLogNormalWithMetadata.arff";
     private static final int NUM_0F_ITERATIONS = 25;
     private static final int NUM_OF_THREADS = 4;
     private static final int SINGLE_T_TIMES = 100;
@@ -75,10 +73,8 @@ public class SupervisedClassificationProgram
     		{
         	    try
 				{
-					total.add(SupervisedClassificationProgram.this.run
-
-(NUM_0F_ITERATIONS));
-				} catch (Exception e)
+        	    	total.add(SupervisedClassificationProgram.this.run(NUM_0F_ITERATIONS));
+				} 	catch (Exception e)
 				
         	    {
 					e.printStackTrace();
